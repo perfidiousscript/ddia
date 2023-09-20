@@ -12,8 +12,8 @@ export default function ReadAfterWrite() {
         <p>BUT When dbs follows a write-to-leader/read-from-follower model strange things can happen...</p>
         <br/>
         <div className="fixed bottom-0 left-0 flex h-48 w-full justify-end flex-wrap  bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:bg-none font-mono">
-        <a href="/examples/read_after_write/user" >
-        Strange things...
+        <a href="/examples/read_after_write/leader_follower" >
+        Example...
         </a></div>
       </div>
     </main>

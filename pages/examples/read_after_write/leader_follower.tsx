@@ -55,30 +55,34 @@ function moveRequest(){
 }
 
   return(
-    <main className="bg-black text-gray-300 flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="bg-black text-gray-300 flex min-h-screen flex-col items-center justify-around p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
         Leader Follower flow
         </div>
       </div>
       <div className="w-full grid grid-rows-4 grid-flow-col gap-2">
-        <div className="w-full h-16 p-2 border-solid border-2 border-white">
+        <div className="w-full flex h-16 p-2 border-solid border-2 border-white">
           User
-          <div className="request w-20 h-14 p-2 border-solid border-2 border-blue relative top bottom-8 left-16" onClick={moveRequest}>Request</div>
+          <div className="request w-20 p-2 border-solid border-2 border-blue relative top left-16" onClick={moveRequest}>Write</div>
         </div>
-        <div className="w-full h-16 p-2 border-solid border-2 border-white flex">
+        <div className="w-full flex h-16 p-2 border-solid border-2 border-white flex">
           Leader
-          <div className="ack w-20 h-14 p-2 border-solid border-2 border-blue relative top left-64 opacity-0" onClick={moveRequest}>Req Ack</div>
-          <div className="rep-1 w-20 h-14 p-2 border-solid border-2 border-blue relative top left-64 opacity-0" onClick={moveRequest}>Rep 1</div>
-          <div className="rep-2 w-20 h-14 p-2 border-solid border-2 border-blue relative top left-64 opacity-0" onClick={moveRequest}>Rep 2</div>
+          <div className="ack w-20 p-2 border-solid border-2 bg-red-800 border-red-300 relative top left-64 opacity-0" >Req Ack</div>
+          <div className="rep-1 w-20 p-2 border-solid border-2 bg-blue-800 border-blue-200 relative top left-64 opacity-0" >Rep 1</div>
+          <div className="rep-2 w-20 p-2 border-solid border-2 bg-blue-800 border-blue-200 relative top left-64 opacity-0" >Rep 2</div>
         </div>
-        <div className="w-full h-16 p-2 border-solid border-2 border-white">
+        <div className="w-full flex h-16 p-2 border-solid border-2 border-white">
           Follower 1
         </div>
-        <div className="w-full h-16 p-2 border-solid border-2 border-white">
+        <div className="w-full flex h-16 p-2 border-solid border-2 border-white">
           Follower 2
         </div>
       </div>
+      <div className="fixed bottom-0 left-0 flex h-48 w-full justify-end flex-wrap  bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:bg-none font-mono">
+      <a href="/examples/read_after_write/user" >
+      Strange Things...
+      </a></div>
     </main>
   )
 }
