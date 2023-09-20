@@ -115,8 +115,8 @@ export default function Explaination() {
           </div>
         </div>
         <div className="fixed bottom-0 left-0 flex h-48 w-full justify-end flex-wrap  bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:bg-none font-mono">
-        <a href="/examples/read_after_write/user" >
-        Strange Things...
+        <a href="/examples/read_after_write/read_after_write_consistency" >
+        Read After Write Consistency
         </a></div>
       </main>
     )
