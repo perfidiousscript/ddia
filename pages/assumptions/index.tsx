@@ -13,7 +13,7 @@ export default function Assumptions() {
         <p>It is possible for a message to be sent recieved and acknowledged, but overwritten by another message.</p>
         <p>(Stated another way: It is possible for a message to have no effect or be overwritten).</p>
         <p>(Stated another way: It is possible for state to change between the time your message is sent and its ACK is recieved.).</p>
-        <p>There is no guarantee a message that HAS arrived will send an acknowledgement.</p>
+        <p>There is no guarantee that even if a message is recieved that the sending machine will see an acknowledgement.</p>
       </div>
     </main>
   )
