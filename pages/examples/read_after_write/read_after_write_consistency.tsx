@@ -12,12 +12,12 @@ export default function ReadAfterWriteConsistency() {
         <br/>
         <ul>
           <li>Normally read from a follower EXCEPT after a write, then read that information from the leader.</li>
-          <li>If writes are common, then read al information from the leader for some span (~60seconds) after a write.</li>
+          <li>If writes are common, then read all information from the leader for some span (~60seconds) after a write.</li>
           <li>Read from followers whose update timestamp is later than the last read.</li>
         </ul>
         <div className="fixed bottom-0 left-0 flex h-48 w-full justify-end flex-wrap  bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:bg-none font-mono">
         <a href="/examples/read_after_write/rawc_example" >
-        Example...
+        Demonstrating Read Your Writes...
         </a></div>
       </div>
     </main>

@@ -45,13 +45,23 @@ export default function ReadAfterWriteConsistency() {
       { transform: "translate(5.6em, -4.6em)" },
   ];
 
+  const moveRead2 = [
+      { transform: "translate(5.6em, -4.6em)" },
+  ];
+
+  const moveRead2Resp = [
+      { transform: "translate(5.6em, 4.6em)" },
+  ];
+
   function moveRequest(){
     let request = document.querySelector(".write")
     let ack = document.querySelector(".ack")
     let rep1 = document.querySelector(".rep-1")
     let rep2 = document.querySelector(".rep-2")
     let read = document.querySelector(".read")
+    let read2 = document.querySelector(".read2")
     let readResp = document.querySelector(".readResp")
+    let read2Resp = document.querySelector(".nullResp")
 
     request.animate(requestAnimation, requestTiming);
 
@@ -69,18 +79,22 @@ export default function ReadAfterWriteConsistency() {
 
     setTimeout(()=>{
       read.animate(increaseOpacity,opacityTiming)
+      read2.animate(increaseOpacity,opacityTiming)
     }, 4100)
 
     setTimeout(()=>{
       read.animate(moveRead,requestTiming)
+      read2.animate(moveRead2,requestTiming)
     }, 4200)
 
     setTimeout(()=>{
       readResp.animate(increaseOpacity,opacityTiming)
+      read2Resp.animate(increaseOpacity,opacityTiming)
     }, 6200)
 
     setTimeout(()=>{
       readResp.animate(moveReadResp,requestTiming)
+      read2Resp.animate(moveRead2Resp,requestTiming)
     }, 6300)
   }
 
@@ -91,9 +105,9 @@ export default function ReadAfterWriteConsistency() {
         Explaination:
         </div>
       </div>
-      <div className="w-full grid grid-rows-4 grid-flow-col gap-2">
+      <div className="w-full grid grid-rows-5 grid-flow-col gap-2">
         <div className="w-full flex h-16 p-2 border-solid border-2 border-white">
-          User
+          User 1
           <div className="write w-20 p-2 border-solid border-2 border-blue relative top left-16" onClick={moveRequest}>Write</div>
           <div className="read w-20 p-2 border-solid border-2 bg-yellow-800 border-yellow-300 border-blue relative top left-72 opacity-0" >Read</div>
         </div>
@@ -110,11 +124,18 @@ export default function ReadAfterWriteConsistency() {
         </div>
         <div className="w-full flex h-16 p-2 border-solid border-2 border-white">
           Follower 2
+          <div className="read w-1/4 p-2 border-solid border-2 bg-yellow-800 border-yellow-300 border-blue relative top opacity-0" >Spacer</div>
+          <div className="nullResp w-20 p-2 border-solid border-2 bg-yellow-800 border-yellow-300 border-blue relative top opacity-0" >NULL</div>
+        </div>
+        <div className="w-full flex h-16 p-2 border-solid border-2 border-white">
+          User 2
+        <div className="read w-1/12 p-2 border-solid border-2 bg-yellow-800 border-yellow-300 border-blue relative top opacity-0" >Spacer</div>
+        <div className="read2 w-20 p-2 border-solid border-2 bg-yellow-800 border-yellow-300 border-blue relative top left-72 opacity-0" >Read</div>
         </div>
       </div>
       <div className="fixed bottom-0 left-0 flex h-48 w-full justify-end flex-wrap  bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:bg-none font-mono">
-      <a href="/examples/read_after_write/second_user" >
-      No Gurarantees...
+      <a href="/examples/read_after_write/read_after_write_consistency" >
+      Another issue: Going back in time...
       </a></div>
     </main>
   )}
